@@ -1,0 +1,244 @@
+/* 最顶部*/
+.site-topbar{
+    background: #333;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+.topbar-nav{
+    height: 40px;
+}
+.topbar-nav li{
+    float: left;
+    margin-right: 15px;
+    position: relative;
+}
+.topbar-right{
+    float: right;
+}
+a.topbar-cart{
+    display: block;
+    float: right;
+    background: #424242 url("../img/icon/shopCart.png") no-repeat;
+    background-position: 10px 10px;
+    margin-left: 15px;
+    width: 100px;
+}
+a.topbar-cart span{
+    margin-left: 10px;
+}
+a.topbar-cart:hover{
+    background: white url("../img/icon/shopCart2.png") no-repeat;
+    background-position: 10px 10px;
+    color:darkorange;
+}
+.shop-text{
+    height: 0px;
+    width: 316px;
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    z-index: 10;
+    color: #424242;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    transition: all .2s linear;
+    overflow: hidden;
+}
+.shop-text.toggle{
+    height: 98px;
+}
+.shop-text>div{
+    padding: 32px 0;
+}
+span.s1{
+    color:#424242;
+    position: absolute;
+    right: -9px;
+    top: 0px;
+}
+/* 顶部导航 */
+.site-header{
+    height: 100px;
+}
+#top-logo{
+    width: 55px;
+    float: left;
+    margin-top: 23px;
+}
+#mi-816{
+    width: 163px;
+    height: 66px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+#top-nav{
+    float: left;
+    height: 100%;
+}
+.nav-link{
+    float: left;
+    margin: 0 10px;
+    font-size: 16px;
+    height: 100px;
+    line-height: 100px;
+}
+.hide-list>li{
+    line-height: 20px;
+}
+#top-nav li a:link{
+    color:#333;
+}
+#top-nav li a:visited{
+    color:#333;
+}
+#top-nav li.active>a{
+    color:#ff6700;
+}
+#top-nav li a:active{
+    color:#ff6700;
+}
+/* 顶部搜索框 */
+.head-search{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+.top-search{
+    margin-top: 0;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.search-text{
+    position: absolute;
+    outline: none;
+    width: 243px;
+    height: 48px;
+    padding: 0 10px;
+    border:1px solid #e0e0e0;
+    top: 0;
+    right: 51px;
+    transition: all .2s linear;
+}
+.search-sub{
+    position: absolute;
+    margin-right: 0;
+    width: 52px;
+    height: 48px;
+    border:1px solid #e0e0e0;
+    background: white url(../img/icon/search.jpg) no-repeat;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.search-sub:hover{
+    background: #ff6700 url(../img/icon/search_hover.jpg) no-repeat;
+}
+.search-list{
+    display: none;
+    position: absolute;
+    right: 51px;
+    top: 48px;
+    width: 243px;
+    border: 1px solid #ff6700;
+    border-top: 0px;
+    background: #fff;
+    z-index: 10;
+}
+.search-list>ul>li{
+    font-size: 12px;
+    padding: 6px 15px;
+    cursor: pointer;
+    color: #424242;
+}
+.search-list>ul>li>span{
+    float: right;
+    color: #b0b0b0;
+}
+.search-list>ul>li:hover{
+    background: #fafafa;
+}
+.hot-words{
+    position: absolute;
+    top: 14px;
+    right: 62px;
+}
+.hot-words a{
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    transition: all .2s linear;
+}
+.hot-words a:hover{
+    background: #ff6700;
+    color: #fff;
+}
+/* 隐藏菜单 */
+.hide-menu{
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    left: 0;
+    border-top:1px solid #e0e0e0;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+    z-index: 1000;
+    background: #fff;
+}
+.hide-menu>div{
+    height: 100%;
+}
+.hide-list{
+    margin: 0 auto;
+}
+.hide-list li{
+    float: left;
+    width: 204px;
+    padding: 35px 12px 25px;
+    position: relative;
+}
+.hide-list>li>p{
+    font-size: 12px;
+}
+.hide-list li:before{
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 1;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+.hide-list li:first-child:before{
+    width: 0;
+}
+.flags{
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    padding: 1px 20px;
+    border: 1px solid #ff6700;
+    color: #ff6700;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    margin-left: -33px;
+    top: -1px;
+}
+.figure-thumb{
+    margin: 0 auto 16px;
+}
+.figure-thumb a img{
+    width: 160px;
+    height: 110px;
+}
+.title>a{
+    color: #333;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/product_details.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <header id="header"></header>
+    <section>
+        <!-- 导航 -->
+        <div class="nav">
+            <div class="container">
+                <h2>小米8</h2>
+                <div class="nav-left">
+                    <span>|</span>
+                    <a href="#">小米8 透明探索版</a>
+                    <span>|</span>
+                    <a href="#">小米8 SE</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">概述</a>
+                    <span>|</span>
+                    <a href="#">图集</a>
+                    <span>|</span>
+                    <a href="#">参数</a>
+                    <span>|</span>
+                    <a href="#">F码通道</a>
+                    <span>|</span>
+                    <a href="#">用户评价</a>
+                </div>
+            </div>
+        </div>
+        <div class="main container clearfix">
+            <div class="carousel">
+                <div class="carousel-img" :class="{current:current_color==0}" id="black-img" v-show="current_color==0">
+                    <img src="img/product_details/mi8-black-1.jpg" alt=""/>
+                    <img src="img/product_details/mi8-black-2.jpg" alt=""/>
+                    <img src="img/product_details/mi8-black-3.jpg" alt=""/>
+                    <img src="img/product_details/mi8-black-4.jpg" alt=""/>
+                </div>
+                <div class="carousel-img" :class="{current:current_color==1}" id="blue-img" v-show="current_color==1">
+                    <img src="img/product_details/mi8-blue-1.jpg" alt=""/>
+                    <img src="img/product_details/mi8-blue-2.jpg" alt=""/>
+                    <img src="img/product_details/mi8-blue-3.jpg" alt=""/>
+                    <img src="img/product_details/mi8-blue-4.jpg" alt=""/>
+                </div>
+                <div class="carousel-img" :class="{current:current_color==2}" id="white-img" v-show="current_color==2">
+                    <img src="img/product_details/mi8-white-1.jpg" alt=""/>
+                    <img src="img/product_details/mi8-white-2.jpg" alt=""/>
+                    <img src="img/product_details/mi8-white-3.jpg" alt=""/>
+                    <img src="img/product_details/mi8-white-4.jpg" alt=""/>
+                </div>
+                <div class="carousel-arrow">
+                    <div class="carousel-left"></div>
+                    <div class="carousel-right"></div>
+                </div>
+                <div class="carousel-indicators tac">            
+                    <div class="control-item"><a href="javascript:;" data-toggle="carousel" ></a></div>
+                    <div class="control-item"><a href="javascript:;" data-toggle="carousel"></a></div>
+                    <div class="control-item"><a href="javascript:;" data-toggle="carousel"></a></div>
+                    <div class="control-item"><a href="javascript:;" data-toggle="carousel"></a></div>
+                </div>
+            </div>
+            <div class="main-right">
+                <h1>小米8</h1>
+                <p class="sale-desc">
+                    <span class="o-color">「6GB+64GB/6GB+128GB/6GB+256GB 赠小米手环2」</span>全球首款双频GPS / 骁龙845处理器 / 红外人脸解锁 / AI变焦双摄 / 三星 AMOLED 屏
+                </p>
+                <span class="price">{{current_price}}元</span>
+                <div class="gift">
+                    <span class="gift-tag">赠品</span>
+                    <span class="gift-name">赠小米手环2</span>
+                </div>
+                <div class="main-content">
+                    <div class="address">
+                        <div class="default-address">
+                            <div class="address-info">
+                                <span class="item">北京</span>
+                                <span class="item">北京市</span>
+                                <span class="item">东城区</span>
+                                <span class="item">永定门外街道</span>
+                                <span class="o-color change-address">修改</span>
+                            </div>
+                            <div>
+                                <span class="o-color">有现货</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-edition">
+                        <p>选择版本</p>
+                        <ul class="step-list clearfix">
+                            <li :class="{active:current_edition==i}" v-for="(p,i) in edition" @click="changeEdition(i)">
+                                <span class="e-change">
+                                    <span class="name" v-text="p.version"></span>
+                                    <span class="edition-price" v-text="p.price+'元'"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="choose-color">
+                        <p>选择颜色</p>
+                        <ul class="step-list clearfix tac">
+                            <li v-for="(c,i) in colors" :class="{active:current_color==i,'o-color':current_color==i}">
+                                <span class="color" @click="changeColor(i)">
+                                    <img :src="c.icon" alt="">
+                                    <span v-text="c.color"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro-choose">
+                        <p>选择小米提供的保障服务
+                            <span class="o-color">了解保障服务 ></span>
+                        </p>
+                        <ul>
+                            <li class="clearfix" :class="{active:service1}" @click="service1_click()">
+                                <i class="icon-option tac" :class="{checked:service1}">
+                                    <em :class="{checked:service1}" v-show="service1">√</em> 
+                                </i>
+                                <img src="img/product_details/service_1.jpg" alt="">
+                                <div>
+                                    <span>意外保障服务</span>
+                                    <p class="sale-desc">手机意外衰落/进水/碾压损坏</p>
+                                    <p class="agreement">
+                                        <i class="icon-checked" :class="{checked:service1}">
+                                            <em v-show="service1"  :class="{checked:service1}">√</em> 
+                                        </i>
+                                        <span>我已阅读</span>
+                                        <span class="o-color">服务条款</span>
+                                        <span>|</span>
+                                        <span class="o-color">常见问题</span>
+                                    </p>
+                                    <span class="service-price">249元</span>
+                                </div>
+                            </li>
+                            <li class="clearfix" :class="{active:service2}" @click="service2_click()">
+                                <i class="icon-option" :class="{checked:service2}">
+                                    <em v-show="service2" :class="{checked:service2}">√</em> 
+                                </i>
+                                <img src="img/product_details/service_1.jpg" alt="">
+                                <div>
+                                    <span>碎屏保障服务</span>
+                                    <p class="sale-desc">手机意外碎屏</p>
+                                    <p class="agreement" @click="service2_click()">
+                                        <i class="icon-checked" :class="{checked:service2}">
+                                            <em v-show="service2" :class="{checked:service2}">√</em> 
+                                        </i>
+                                        <span>我已阅读</span>
+                                        <span class="o-color">服务条款</span>
+                                        <span>|</span>
+                                        <span class="o-color">常见问题</span>
+                                    </p>
+                                    <span class="service-price">129元</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro-list">
+                        <div>
+                            <div>
+                                小米8
+                                <span v-text="this.edition[current_edition].version.split(' ')[0]"></span>   
+                                <span v-text="colors[current_color].color"></span>
+                                <span v-text="current_price+'元'"> </span>
+                            </div>
+                            <div v-show="service1">
+                                <span>意外保障服务</span>
+                                <span>249元</span>
+                            </div>
+                            <div v-show="service2">
+                                <span>碎屏保障服务</span>
+                                <span>129元</span>
+                            </div>
+                        </div>
+                        <div>
+                            总计：{{total_price}}元
+                        </div>
+                    </div>
+                    <div class="buy-btn">
+                        <ul class="clearfix">
+                            <li>
+                                <a href="javascript:;">加入购物车</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">喜欢</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro-policy">
+                        <span class="support">
+                            <img src="img/product_details/select.png" alt="">
+                            <span>7天无理由退货</span>
+                        </span>
+                        <span class="support">
+                            <img src="img/product_details/select.png" alt="">
+                            <span>15天质量问题换货</span>
+                        </span>
+                        <span class="support">
+                            <img src="img/product_details/select.png" alt="">
+                            <span>365天保修</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pro-information">
+            <div class="specific-intro">
+                <div class="container">
+                    <h3>特别说明</h3>
+                    <img src="img/product_details/specific.jpg" alt="">
+                </div>
+            </div>
+            <div class="specific-intro">
+                <div class="container">
+                    <h3>官方微信</h3>
+                    <img src="img/product_details/wechat.jpg" alt="" class="w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer"></footer>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/product_details.js"></script>
+</body>
+</html>

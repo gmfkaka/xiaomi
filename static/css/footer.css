@@ -1,0 +1,78 @@
+.foot-service{
+    height: 80px;
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.foot-service ul li{
+    float: left;
+    width: 20%;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    border-left:1px solid #e0e0e0;
+}
+.foot-service ul li:first-child{
+    border-width: 0px;
+}
+.footer-links{
+    height: 192px;
+    padding: 40px 0;
+}
+.footer-links dl{
+    width: 160px;
+    height: 112px;
+    float: left;
+}
+.footer-links dl dt{
+    margin-bottom: 26px;
+}
+.footer-links dl dd{
+    margin-top: 10px;
+    font-size: 12px;
+}
+.footer-contact{
+    width: 251px;
+    float: right;
+    border-left:1px solid #e0e0e0;
+}
+.footer-phone{
+    font-size: 22px;
+}
+.footer-time{
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+.footer-service{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #f25807;
+    color:#f25807 !important;
+    padding: 5px 30px;
+    transition: all .2s linear;
+}
+a.footer-service:hover{
+    color: #fff !important;
+    background: #ff6700;
+}
+.footer-info{
+    background: #fafafa;
+    padding: 30px 0;
+    vertical-align: middle;
+}
+.footer-info .container{
+    font-size: 12px;
+}
+.footer-info .container>div{
+    float: left;
+}
+.info-links a img{
+    height: 28px;
+    width: auto;
+}
+.footer-logo{
+    margin-right: 15px;
+}
+.info-links{
+    margin-left: 50px;
+}

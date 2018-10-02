@@ -1,0 +1,151 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,a{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background: #f9f9f9;
+    font-size: 14px;
+    font-family: arial,"Hiragino Sans GB", "Microsoft YaHei","微軟正黑體","儷黑 Pro", sans-serif;
+}
+.box{
+    width: 854px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.main{
+    background: #fff;
+    padding: 0 34px 30px;
+}
+.logo{
+    padding-bottom: 40px;
+}
+.mi-logo{
+    width: 49px;
+    height: 48px;
+    margin: 0 auto;
+    display: block;
+    cursor: default;
+    background-image: url("../img/icon/logo.png");
+    background-position: center center;
+}
+.title{
+    text-align: center;
+    font-size: 30px;
+}
+.reg-box{
+    width: 332px;
+    padding: 30px 0;
+    line-height: 20px;
+    margin: 0 auto;
+    /* border:1px solid red; */
+}
+.area{
+    padding-bottom: 5px;
+}
+.country-list{
+    padding-left: 10px;
+    width: 100%;
+    border: 1px solid #b8b8b8;
+    cursor: pointer;
+    height: 40px;
+}
+.tip{
+    margin: 10px 0 15px;
+    color:#666;
+}
+.zone-number{
+    float: left;
+    width: 70px;
+    padding: 0 9px;
+    border:1px solid red;
+    line-height: 40px;
+    border: 1px solid #b8b8b8;
+    color: #555;
+    cursor: pointer;
+}
+.phone{
+    position: relative;
+    padding-bottom: 25px;
+}
+.phone input{
+    float: left;
+    width: 262px;
+    height: 42px;
+    border: 1px solid #b8b8b8;
+    border-left: 0;
+    padding: 10px;
+    outline: none;
+    background: white;
+    position: absolute;
+}
+.phonecheck{
+    color:#ff6700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.clearfix:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.zone-list{
+    position: absolute;
+    top: 42px;
+    width: 332px;
+    border:1px solid #b8b8b8;
+    border-top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+.zone-list li{
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.zone-list>li>span:nth-child(2){
+    float: right;
+}
+.zone-list li:hover{
+    background: #eaeaea;
+}
+.submit{
+    position: absolute;;
+    margin-top: 15px;
+    border: 1px solid rgba(186,186,186,0.3);
+    color: #fff;
+    background-color: #ff6700;
+    width: 332px;
+    height: 42px;
+    margin: 0 auto;
+    line-height: 42px;
+    text-align: center;
+    z-index: 1;
+}
+.confirm{
+    text-align: center;
+    padding-top: 40px;
+}
+.confirm>p{
+    display: inline;
+}
+.footer{
+    margin-top: 20px;
+    color: #9d9d9d;
+}
+.footer{
+    text-align:center;
+}
+.footer-top ul li{
+    display: inline-block;
+}
+.footer-top ul li span{
+    padding: 0 10px;
+}
+.active{
+    color:#333;
+}
+.footer-bottom{
+    padding: 20px;
+}

@@ -1,0 +1,212 @@
+/*初始化*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,a {
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+}
+a{
+    color:#999;
+}
+a:hover{
+    color: #ff6700;
+}
+.header{
+    width: 1130px;
+    margin: 0 auto;
+}
+.login-banner{
+    height: 588px;
+    background:url(../img/login/background.jpg) no-repeat;
+    background-position: top center;
+    position: relative;
+}
+.parent{
+    width: 1130px;
+    margin: 0 auto;
+}
+.login-form{
+    position: absolute;
+    width: 410px;
+    height: 524px;
+    background: #fff;
+    top: 50%;
+    margin-top: -262px;
+    right: 8%;
+}
+.top-text{
+    font-size: 24px;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 15px;
+}
+span.split{
+    margin: 0 10px;
+    color:#e0e0e0;
+}
+.login-text{
+    cursor: pointer;
+}
+span.login-text{
+    color:#666;
+}
+span.active,a.active{
+    color:#ff6700;
+}
+.login-content{
+    position: absolute;
+    margin-top: 20px;
+}
+.login-input{
+    text-align: center;
+}
+.login-input input{
+    width: 344px;
+    height: 48px;
+    padding: 13px 16px 13px 14px;
+    outline: none;
+    text-indent: 15px;
+    text-indent: 0px;
+}
+#ulogin,#upwd{
+    margin-top: 20px;
+}
+#ulogin{
+    width: 348px;
+    border:none;
+    color: #fff;
+    background:#ef5b00;
+    cursor: pointer;
+    font-size: 14px;
+}
+#content1>div:not(:first-child){
+    width: 348px;
+}
+#content2{
+    width: 100%;
+    text-align: center;
+}
+#content2>img{
+    margin-top: 80px;
+}
+.erweima-text{
+    padding-top: 14px;
+    font-size: 14px;
+    color:#757575;
+}
+.erweima-text span{
+    padding: 0 5px;
+    color: #ff6700;
+}
+.form-bottom{
+    margin:10px auto;
+}
+.icon{
+    margin: 130px auto;
+}
+.form-bottom-left{
+    color:#ff6700;
+}
+.form-bottom-right{
+    float: right;
+}
+/*错误提示*/
+.err-msg{
+    width: 348px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    color: #f56700;
+    text-align: left;
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.err-icon{
+    width: 14px;
+    height: 14px;
+    margin: -1px 5px 0 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/sprite_login.gif");
+    background-position: 0 -69px;
+}
+.err-msg>span{
+    vertical-align: middle;
+}
+.icon ul li{
+    float: left;
+    margin: 5px 28px;
+}
+.icon ul li a{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+.icon ul li a div{
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/login/icons_type.png") no-repeat;
+}
+#qq{
+     background: #0288d1;
+}
+#qq-icon{
+    background-position: -18px 0;
+}
+#weibo{
+    background: #d32f2f;
+}
+#weibo-icon{
+    background-position: -37px 0;
+}
+#zfb{
+    background: #0ae;
+}
+#zfb-icon{
+    background-position: -57px 0;
+}
+#wechat{
+    background: #00d20d;
+}
+#wechat-icon{
+    width: 22px;
+    background-position: -84px 0;
+}
+fieldset{
+    border:0;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    color:#bbb;
+}
+.footer{
+    margin-top: 80px;
+}
+.footer{
+    text-align:center;
+}
+.footer-top ul li{
+    display: inline-block;
+}
+.footer-top ul li a{
+    padding: 0 10px;
+}
+.footer-bottom{
+    padding: 30px;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}

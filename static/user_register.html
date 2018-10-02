@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米账号 -注册</title>
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="main">
+            <div class="logo">
+                <a href="javascript:void(0)" class="mi-logo"></a>
+            </div>
+            <div class="title">
+                <p>注册小米账号</p>
+            </div>
+            <div class="account" id="account">
+                    <div class="reg-box">
+                        <p class="area">国家/地区</p>
+                        <select class="country-list">
+                            <option value="1" selected="">中国</option>
+                            <option value="2">中国台湾</option>
+                            <option value="3">中国香港</option>
+                            <option value="4">Brazil</option>
+                            <option value="5">India</option>
+                            <option value="6">Indonesia</option>
+                            <option value="6">Malaysia</option>
+                        </select>
+                        <p class="tip">成功注册帐号后，国家/地区将不能被修改</p>
+                        <p>手机号码</p>
+                        <div class="phone clearfix">
+                            <div class="zone-number" @click="if_show()">
+                                <span v-text="code"></span>
+                                <img src="img/login/select.png" alt="">
+                            </div>
+                            <input type="tel" placeholder="请输入手机号码" v-model="phone">
+                            <ul class="zone-list" v-show="show">
+                                <li v-for="(p,i) in zone_list" @click="select(i)">
+                                    <span v-text="p.zone"></span>
+                                    <span v-text="p.code"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p v-show="phoneChecked" class="phonecheck">手机号格式不正确，请检查</p>
+                        <input type="button" value="立即注册" class="submit" @click="reg_phone">
+                    </div>  
+            </div>
+            <div class="confirm">
+                <input type="checkbox">
+                <p>注册帐号即表示您同意并愿意遵守小米 <b>用户协议</b> 和 <b>隐私政策</b></p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-top">
+                <ul class="clearfix">
+                    <li><span class="active">简体</span>|</li>
+                    <li><span>繁体</span>|</li>
+                    <li><span>English</span>|</li>
+                    <li><span>常见问题</span></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    <span>小米公司版权所有-京ICP备10046444-</span>
+                    <img src="img/login/ghs.png" alt=""/>
+                    <span>京公网安备11010802020134号-京ICP证110507号</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#account",
+            data:{
+                show:false,
+                zone_list:[
+                    {zone:"中国",code:"+86"},
+                    {zone:"中国台湾",code:"+886"},
+                    {zone:"中国香港",code:"+852"}
+                ],
+                code:"+86",
+                phone:"",
+                phoneChecked:false
+            },
+            methods:{
+                if_show(){
+                    this.show=!this.show;
+                },
+                select(i){
+                    this.show=!this.show;
+                    this.code=this.zone_list[i].code;
+                },
+                reg_phone(){
+                    if(!(/^1[34578]\d{9}$/.test(this.phone))){ 
+                        this.phoneChecked=true;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

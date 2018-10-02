@@ -1,0 +1,340 @@
+.nav{
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.07);
+    color:#616161 !important;
+    z-index: 1000;
+    transition: all .5s linear;
+}
+.nav>div{
+    height: 60px;
+}
+.nav h2,.nav-left{
+    float: left;
+}
+.nav h2{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #212121;
+    float: left;
+}
+.nav-right{
+    float: right;
+    margin: 17px 0 0 0;
+}
+.nav-left{
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 21px;
+}
+.nav span{
+    margin: 0.25rem;
+}
+.nav-right span{
+    color:#e0e0e0;
+}
+.nav a:link{
+    color:#616161;
+}
+.nav a:hover{
+    color:#ff6700;
+}
+.main{
+    padding-top: 32px;
+    padding-bottom: 12px;
+    position: relative;
+}
+/*����ֲ�*/
+.carousel{
+    width: 606px;
+    height: 600px;
+    float: left;
+    position: relative;
+}
+.carousel-img{
+    position: relative;
+}
+.carousel-img>img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0 -280px;
+}
+.carousel-img>img:first-child{
+    opacity: 1;
+}
+.carousel-img>img:not(:first-child){
+    opacity: 0;
+}
+.carousel-indicators{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color:#666;
+    font-size: 12px;
+}
+.control-item{
+    display: inline-block;
+}
+.control-item>a{
+    display: block;
+    width: 50px;
+    height: 2px;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    border-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    text-align: left;
+    background: #ccc;
+}
+.control-item>a.active{
+    border-color: rgba(0,0,0,0.4);
+    transition: all .5s linear;
+}
+.carousel-arrow>div{
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    cursor: pointer;
+}
+.carousel-left{
+    background: url("../img/icon-slides.png") no-repeat -84px 50%;
+}
+.carousel-left:hover{
+    background-position: 0 50%;
+}
+.carousel-right{
+    right: 0;
+    background: url("../img/icon-slides.png") no-repeat -125px 50%;
+}
+.carousel-right:hover{
+    background-position: -42px 50%;
+}
+.main-right{
+    width: 606px;
+    float: right;
+}
+.main-right h1{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: #212121;
+}
+p.sale-desc{
+    color: #b0b0b0;
+    margin: 0;
+    padding: 0;
+    padding-top: 8px;
+}
+span.price{
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    color: #ff6700;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0 20px;
+}
+.gift{
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.gift-tag{
+    width: 80px;
+    padding: 2px 0;
+    text-align: center;
+    background: #ff6700;
+    color: #fff;
+    display: inline-block;
+}
+.gift-name{
+    margin-left: 5px;
+}
+.address{
+    margin-top: 40px;
+    margin-bottom: 40px
+}
+.default-address{
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 30px 40px 30px 32px;
+    padding-left: 50px;
+}
+.address-info>span{
+    margin-right: 14px;
+}
+.change-address{
+    cursor: pointer;
+}
+.product-edition>p,.choose-color>p,.pro-choose>p,.pro-choose>ul>li>div>span:first-child{
+    font-size: 18px;
+}
+.step-list li{
+    float: left;
+    border:1px solid #e0e0e0;
+    height: 42px;
+    width: 296px;
+    margin-left: 6px;
+    margin-top: 15px;
+    line-height: 42px;
+    font-size: 16px;
+}
+.active{
+    border-color: #ff6700 !important;
+}
+.step-list>li>a{
+    display: block;
+    padding: 0 27px;
+}
+.edition-price{
+    float: right;
+}
+.product-edition,.choose-color,.pro-choose,.pro-list{
+    margin-bottom: 30px;
+}
+span.color,.product-edition>ul>li>span{
+    display: block;
+    cursor: pointer;
+}
+.product-edition>ul>li>span{
+    margin: 0 27px;
+}
+.choose-color img{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.pro-choose p:first-child span{
+    float: right;
+    font-size: 14px;
+    cursor: pointer;
+}
+.pro-choose p,.pro-choose span{
+    margin-bottom: 10px;
+}
+.pro-choose>ul>li{
+    background: #fff;
+    cursor: pointer;
+    padding: 30px 0;
+    border:1px solid #e0e0e0;
+    position: relative;
+}
+.pro-choose>ul>li:first-child{
+    border-bottom: 0;
+}
+.pro-choose>ul>li.active{
+    border:1px solid #ff6700;
+}
+.pro-choose>ul>li>img{
+    float: left;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+.pro-choose>ul>li>div{
+    width: 370px;
+    float: left;
+}
+/* 保险勾选框 */
+.icon-option{
+    float: left;
+    width: 15px;
+    height: 15px;
+    border:1px solid rgb(176, 176, 176);
+    border-radius: 50%;
+    margin: 20px 0 0 20px;
+}
+.icon-checked{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border:1px solid rgb(176, 176, 176);
+    vertical-align: -3px;
+    margin-right: 3px;
+}
+/* 保险选中样式 */
+i.checked{
+    background-color: #ff6700;
+    border:0;
+}
+em.checked{
+    color:#fff;
+}
+.service-price{
+    position: absolute;
+    right: 20px;
+    bottom: 28px;
+    color: #757575;
+}
+.pro-list{
+    background: #f9f9fa;
+    padding: 30px;
+}
+.pro-list>div:first-child>div>span:last-child{
+    float: right;
+}
+.pro-list>div:first-child>div{
+    margin-bottom: 5px;
+}
+.pro-list>div:nth-child(2){
+    color: #ff6700;
+    font-size: 24px;
+    padding-top: 20px;
+}
+.buy-btn>ul{
+    padding: 0;
+    margin: 10px 0 20px 0;
+}
+.buy-btn>ul>li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.buy-btn>ul>li:first-child>a,.buy-btn>ul>li:nth-child(2)>a{
+    width: 298px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    background: #ff6700;
+    border-color: #ff6700;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+}
+.buy-btn>ul>li:nth-child(2)>a{
+    width: 140px;
+    border: 1px solid #b0b0b0;
+    background: #b0b0b0;
+}
+span.support{
+    margin-right: 15px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.support>img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.pro-information{
+    padding-bottom: 50px;
+    background: #f5f5f5;
+}
+.specific-intro h3{
+    font-size: 22px;
+    font-weight: normal;
+    margin: 1em 0;
+}
+.specific-intro>.container:before{
+    content: " ";
+    display: table;
+}

@@ -1,0 +1,273 @@
+/* 面包屑导航 */
+.breadcrumbs{
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background: #f5f5f5;
+}
+.breadcrumbs a{
+    color: #757575;
+}
+.breadcrumbs a:hover{
+    color: #424242;
+}
+.breadcrumbs span{
+    margin: 0 0.5em;
+    color: #b0b0b0;
+}
+/* 筛选框下拉菜单 */
+.filter-box{
+    padding: 18px 0;
+}
+#filter-1,#filter-2{
+    height: 45px;
+    transition: height .3s ease-in;
+}
+#filter-1.toggled{
+    height: 135px;
+}
+
+.more img{
+    width: 20px;
+    height: 22px;
+    float: right;
+}
+.more span{
+    float: left;
+}
+#filter-2.toggled{
+    height: 225px;
+}
+.filter-box-wrap{
+    position: relative;
+    border-top:1px solid #e0e0e0;
+}
+.filter-box-wrap:first-child{
+    border-top: 0;
+}
+.filter-list{
+    padding-left: 70px;
+    min-height: 45px;
+    height: 45px;
+    width: 1102px;
+    overflow: hidden;
+}
+.filter-list>dt{
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 72px;
+    color: #b0b0b0;
+    display: block;
+}
+.filter-list>dd{
+    float: left;
+    width: 172px;
+    padding: 12px 0;
+}
+.filter-list a{
+    color:#333;
+}
+.filter-list a:hover{
+    color:#ff6700;
+}
+.filter-list>dd.active{
+    color:#ff6700;
+}
+.filter-box-wrap>.more{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 52px;
+    height: 24px;
+    line-height: 24px;
+    color: #757575;
+    cursor: pointer;
+}
+/* 条件筛选框 */
+.content{
+    padding: 20px 0 100px;
+    background: #f5f5f5;
+}
+.order-list-box{
+    height: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+.order-list,.order-list>li{
+    float: left;
+}
+.order-list>li{
+    padding: 0 30px;
+    border-left: 1px solid #e0e0e0;
+}
+.order-list>li:first-child{
+    padding-left: 0;
+    border-left: 0;
+}
+.order-list-box .order-list li a , .order-list-box .type-list li a{
+    color: #424242;
+    transition: color .2s;
+}
+.order-list-box .order-list li a:hover,.order-list-box .type-list li a:hover {
+    color: #ff6700;
+}
+.order-list-box .order-list li.active a {
+    color: #ff6700;
+}
+.type-list{
+    float: right;
+    height: 20px;
+}
+.type-list>li{
+    float: left;
+    margin-left: 30px;
+}
+.type-list>li>a>span.checkbox{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    vertical-align: -2px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+}
+/* 商品列表 */
+.goods-list{
+    width: 1240px;
+}
+.goods-item{
+    position: relative;
+    float: left;
+    width: 296px;
+    height: 430px;
+    padding-top: 47px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    background: #fff;
+    transition: box-shadow .5s linear;
+}
+.goods-item:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.img-bg{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+.title{
+    margin-bottom: 5px;
+}
+.price{
+    margin: 0 0 15px;
+    color: #ff6700;
+}
+.price>del{
+    color: #b0b0b0;
+}
+.thumbs{
+    width: 100%;
+    height: 36px;
+    overflow: hidden;
+}
+.thumb-list>li{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 0 4px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: border-color .2s linear;
+}
+.thumb-list>li img{
+    width: 34px;
+    height: 34px;
+}
+.thumb-list>li:hover{
+    border-color: #ff6700;
+}
+.p-flags{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 40px;
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+.p-flags>div{
+    height: 18px;
+    padding: 1px 20px;
+    color: #fff;
+}
+.flag-saleoff{
+    background-color: #e53935;
+}
+.flag-gift{
+    background-color: #2196f3;
+}
+.actions a{
+    display: block;
+    position: absolute;
+    top: 20px;
+    height: 24px;
+    padding: 3px 4px;
+    font-size: 12px;
+    color: #424242;
+    opacity: 0;
+    transition: all .2s linear;
+}
+.like{
+    left: 20px;
+}
+.like:hover span.s-like{
+    opacity: 1;
+    transition: all .2s linear;
+}
+.shopcart{
+    right: 20px;
+}
+.shopcart:hover span.s-shopcart{
+    opacity: 1;
+    transition: all .2s linear;
+}
+.actions>a>img{
+    width: 25px;
+    height: 25px;
+    vertical-align: -5px;
+}
+.actions span{
+    opacity: 0;
+}
+.goods-item:hover .actions a{
+    opacity: 1;
+}
+.page-list{
+    height: 60px;
+    padding: 15px 0;
+}
+.numbers{
+    display: inline-block;
+    width: 48px;
+    padding: 3px 0;
+    margin: 0 7px;
+    line-height: 24px;
+    color: #b0b0b0;
+    font-size: 18px;
+    transition: all .2s linear;
+}
+.numbers:hover {
+    background: #b0b0b0;
+    color: #fff;
+}
+.numbers.current{
+    background-color: #757575;
+    color: #fff;
+}
