@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>购物车结算 小米商城</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/shop_cart_pay.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="header">
+        <div class="container clearfix">
+            <div class="head-logo">
+                <a href="index.html">
+                    <img src="img/icon/logo.png" alt="">
+                </a>
+            </div>
+            <div class="head-title">
+                <h2>我的购物车</h2>
+            </div>
+            <div class="head-alert">
+                温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算
+            </div>
+            <div class="head-info">
+                <a href="user_login.html">测试用户</a>
+                <span>|</span>
+                <a href="user_register.html">我的订单</a>
+            </div>
+        </div>
+    </div>
+    <!-- 主体 -->
+    <section>
+        <div class="main-page">
+            <div class="container">
+                <!-- 商品内容 -->
+                <div class="cart-list">
+                    <div class="list-head">
+                        <div class="col col-check">
+                            <span class="select-all" :class="{selected:selectAll}" @click="changeSelect">
+                                <i>√</i>
+                            </span>
+                            全选
+                        </div>
+                        <div class="col col-img">&nbsp;</div>
+                        <div class="col col-name">商品名称</div>
+                        <div class="col col-price">单价</div>
+                        <div class="col col-num">数量</div>
+                        <div class="col col-total">小计</div>
+                        <div class="col col-action">操作</div>
+                    </div>
+                    <div class="list-body clearfix">
+                        <div class="item-box clearfix">
+                            <div class="col col-check">
+                                <span class="select-all" :class="{selected:selectAll}" @click="changeSelect">
+                                    <i>√</i>
+                                </span>
+                            </div>
+                            <div class="col col-img">
+                                <a href="product_details.html">
+                                    <img src="img/product_details/mi8-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col col-name">
+                                <h3 class="name">
+                                    <a href="product_details.html">小米8 全网通版 6GB内存 64GB 黑色</a>
+                                </h3>
+                            </div>
+                            <div class="col col-price">{{price}}元</div>
+                            <div class="col col-num">
+                                <div class="change-num-box">
+                                    <a href="javascript:;" @click="goSub()">-</a>
+                                    <input type="text" v-model="num">
+                                    <a href="javscript:;" @click="goAdd()">+</a>
+                                </div>
+                                <p class="remain" v-show="10-num>0 && 10-num<9">还可买{{10-num}}件</p>
+                            </div>
+                            <div class="col col-total">{{num*price}}元</div>
+                            <div class="col col-action">
+                                <a href="javascript:;">x</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 结算信息 -->
+                <div class="cart-bar">
+                    <div class="section-left">
+                        <a href="list.html">继续购物</a>
+                        <span class="cart-total">共
+                            <span>1</span> 件商品，已选择
+                            <span>1</span> 件</span>
+                    </div>
+                    <span class="total-price">合计：
+                        <em>{{num*price}}元</em>
+                    </span>
+                    <a href="shop_cart_confirm.html" class="checkout">去结算</a>
+                </div>
+            </div>
+            <div class="cover" v-show="overmax">
+            </div>
+            <div class="max-amount" v-show="overmax">
+                <p>商品超过最大购买限制 [3091008]</p>
+                <button class="confirm">确定</button>
+            </div>
+        </div>
+        <!-- 遮盖层 -->
+        <div class="cover" v-show="overmax">
+        </div>
+        <div class="max-amount" v-show="overmax">
+            <p>商品超过最大购买限制 [3091008]</p>
+            <button class="confirm" @click="overmax=false">确定</button>
+        </div>
+        <!-- 顶部 -->
+        <footer id="footer"></footer>
+    </section>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+<script>
+    new Vue({
+        el: "section",
+        data: {
+            num: 1,
+            price: 2699,
+            selectAll: false,
+            overmax: false
+        },
+        methods: {
+            //商品数量按钮
+            goSub() {
+                if (this.num > 1)
+                    this.num--;
+            },
+            goAdd() {
+                if (this.num < 10) {
+                    this.num++
+                } else {
+                    this.overmax = true;
+                }
+            },
+            //勾选商品
+            changeSelect() {
+                this.selectAll = !this.selectAll
+            }
+        }
+    })
+</script>
+
+</html>

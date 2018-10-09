@@ -95,7 +95,7 @@ $(function () {
             var f3=res.slice(22,32);
             var rec=res.slice(32,37);
             var hot=res.slice(37,41);
-            console.log(hot);
+            //console.log(hot);
             //闪购
             new Vue({
                 el:"#miflash",

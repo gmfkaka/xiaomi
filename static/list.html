@@ -1,188 +1,317 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>小米商城 - 搜索列表</title>
-    <link rel="stylesheet" href="css/mystyle.css"/>
-    <link rel="stylesheet" href="css/list.css"/>
+    <link rel="stylesheet" href="css/mystyle.css" />
+    <link rel="stylesheet" href="css/list.css" />
     <script src="js/vue.js"></script>
     <script src="js/axios.min.js"></script>
     <script src="js/qs.min.js"></script>
 </head>
+
 <body>
     <header id="header"></header>
     <!-- 主体 -->
     <!-- 分类指示 -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <a href="javascript:void(0)">首页</a>
-            <span>></span>
-            <a href="javascript:void(0)">全部结果</a>
-            <span>></span>
-            <a href="javascript:void(0)">手机</a> 
-        </div>
-    </div>
-    <!-- 筛选框 -->
-    <div class="filter-box container" id="filter-box">
-        <div class="filter-box-wrap">
-            <dl class="filter-list clearfix" :class="{toggled:isToggled_1}" id="filter-1">
-                <dt>机型：</dt>
-                <dd class="active">全部</dd>
-                <dd><a href="#">贴膜</a></dd>
-                <dd><a href="#">保护套/保护壳</a></dd>
-                <dd><a href="#">净化器</a></dd>
-                <dd><a href="#">线材</a></dd>
-                <dd><a href="#">相机</a></dd>
-                <dd><a href="#">品牌耳机</a></dd>
-                <dd><a href="#">充电器</a></dd>
-                <dd><a href="#">手机支架</a></dd>
-                <dd><a href="#">智能硬件</a></dd>
-                <dd><a href="#">蓝牙手柄</a></dd>
-                <dd><a href="#">笔记本电脑配件</a></dd>
-                <dd><a href="#">线控耳机</a></dd>
-                <dd><a href="#">其他配件</a></dd>
-                <dd><a href="#">手机</a></dd>
-            </dl>
-            <div class="more" @click="toggle_1()">
-                <span>更多</span>     
-                <img src="img/product_list/dropdown.png" alt="">
+    <section>
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="javascript:void(0)">首页</a>
+                <span>></span>
+                <a href="javascript:void(0)">全部结果</a>
+                <span>></span>
+                <a href="javascript:void(0)">手机</a>
             </div>
         </div>
-        <div class="filter-box-wrap">
-            <dl class="filter-list clearfix" id="filter-2" :class="{toggled:isToggled_2}" >
-                <dt>机型：</dt>
-                <dd class="active">全部</dd>
-                <dd><a href="#">小米Max3</a></dd>
-                <dd><a href="#">红米6 Pro</a></dd>
-                <dd><a href="#">小米平板4</a></dd>
-                <dd><a href="#">红米6A</a></dd>
-                <dd><a href="#">红米6</a></dd>
-                <dd><a href="#">小米8</a></dd>
-                <dd><a href="#">小米8 SE</a></dd>
-                <dd><a href="#">红米S2</a></dd>
-                <dd><a href="#">黑鲨游戏手机</a></dd>
-                <dd><a href="#">小米6X</a></dd>
-                <dd><a href="#">红米Note5</a></dd>
-                <dd><a href="#">红米5 Plus</a></dd>
-                <dd><a href="#">红米5</a></dd>
-                <dd><a href="#">小米MIX 2</a></dd>
-                <dd><a href="#">红米Note 5A</a></dd>
-                <dd><a href="#">小米5X</a></dd>
-                <dd><a href="#">小米Note 3</a></dd>
-                <dd><a href="#">小米Max 2</a></dd>
-                <dd><a href="#">小米6</a></dd>
-                <dd><a href="#">小米4X</a></dd>
-                <dd><a href="#">红米Note 4X</a></dd>
-                <dd><a href="#">红米4</a></dd>
-                <dd><a href="#">小米5s Plus</a></dd>
-                <dd><a href="#">小米5s</a></dd>
-            </dl>
-            <div class="more" @click="toggle_2()">
-                <span>更多</span>     
-                <img src="img/product_list/dropdown.png" alt="">
+        <!-- 筛选框 -->
+        <div class="filter-box container" id="filter-box">
+            <div class="filter-box-wrap">
+                <dl class="filter-list clearfix" :class="{toggled:isToggled_1}" id="filter-1">
+                    <dt>机型：</dt>
+                    <dd class="active">全部</dd>
+                    <dd>
+                        <a href="#">贴膜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">保护套/保护壳</a>
+                    </dd>
+                    <dd>
+                        <a href="#">净化器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">线材</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">品牌耳机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">充电器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">手机支架</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能硬件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">蓝牙手柄</a>
+                    </dd>
+                    <dd>
+                        <a href="#">笔记本电脑配件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">线控耳机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">其他配件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">手机</a>
+                    </dd>
+                </dl>
+                <div class="more" @click="toggle_1()">
+                    <span>更多</span>
+                    <img src="img/product_list/dropdown.png" alt="">
+                </div>
+            </div>
+            <div class="filter-box-wrap">
+                <dl class="filter-list clearfix" id="filter-2" :class="{toggled:isToggled_2}">
+                    <dt>机型：</dt>
+                    <dd class="active">全部</dd>
+                    <dd>
+                        <a href="#">小米Max3</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米6 Pro</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米平板4</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米6A</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米6</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米8</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米8 SE</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米S2</a>
+                    </dd>
+                    <dd>
+                        <a href="#">黑鲨游戏手机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米6X</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米Note5</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米5 Plus</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米5</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米MIX 2</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米Note 5A</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米5X</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米Note 3</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米Max 2</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米6</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米4X</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米Note 4X</a>
+                    </dd>
+                    <dd>
+                        <a href="#">红米4</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米5s Plus</a>
+                    </dd>
+                    <dd>
+                        <a href="#">小米5s</a>
+                    </dd>
+                </dl>
+                <div class="more" @click="toggle_2()">
+                    <span>更多</span>
+                    <img src="img/product_list/dropdown.png" alt="">
+                </div>
+            </div>
+            <div class="filter-box-wrap">
+                <dl class="filter-list clearfix" id="filter-3">
+                    <dt>品牌：</dt>
+                    <dd class="active">全部</dd>
+                    <dd>
+                        <a href="#">小米</a>
+                    </dd>
+                    <dd>
+                        <a href="#">第三方品牌</a>
+                    </dd>
+                    <dd>
+                        <a href="#">ZMI</a>
+                    </dd>
+                    <dd>
+                        <a href="#">1MORE</a>
+                    </dd>
+                    <dd>
+                        <a href="#">米家</a>
+                    </dd>
+                </dl>
             </div>
         </div>
-        <div class="filter-box-wrap">
-            <dl class="filter-list clearfix" id="filter-3">
-                <dt>品牌：</dt>
-                <dd class="active">全部</dd>
-                <dd><a href="#">小米</a></dd>
-                <dd><a href="#">第三方品牌</a></dd>
-                <dd><a href="#">ZMI</a></dd>
-                <dd><a href="#">1MORE</a></dd>
-                <dd><a href="#">米家</a></dd>
-            </dl>
-        </div>
-    </div>
-    <!-- 内容-->
-    <div class="content">
-        <div class="container">
-            <div class="order-list-box clearfix">
-                <ul class="order-list">
-                    <li class="active"><a href="#">推荐</a></li>
-                    <li><a href="#">新品</a></li>
-                    <li><a href="#">价格</a></li>
-                    <li><a href="#">评论最多</a></li>
-                </ul>
-                <ul class="type-list">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <span class="checkbox">
-                            </span>
-                            查看评价
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <span class="checkbox">
-                            </span>
-                            仅显示特惠商品
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <span class="checkbox">
-                            </span>
-                            仅显示有货商品
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="goods-list-box" id="goods">
-                <div class="goods-list clearfix">
-                    <div class="goods-item" v-for="(goods,index) in 
+        <!-- 内容-->
+        <div class="content">
+            <div class="container">
+                <div class="order-list-box clearfix">
+                    <ul class="order-list">
+                        <li class="active">
+                            <a href="#">推荐</a>
+                        </li>
+                        <li>
+                            <a href="#">新品</a>
+                        </li>
+                        <li>
+                            <a href="#">价格</a>
+                        </li>
+                        <li>
+                            <a href="#">评论最多</a>
+                        </li>
+                    </ul>
+                    <ul class="type-list">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span class="checkbox">
+                                </span>
+                                查看评价
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span class="checkbox">
+                                </span>
+                                仅显示特惠商品
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span class="checkbox">
+                                </span>
+                                仅显示有货商品
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="goods-list-box" id="goods">
+                    <div class="goods-list clearfix">
+                        <div class="goods-item" v-for="(goods,index) in 
                     res">
-                        <div class="img-bg">
-                            <a href="product_details.html">
-                                <img :src="goods.current" alt=""/>
-                            </a>
-                        </div>
-                        <p class="title">
-                            <a href="javascript:void(0)" v-text="goods.title"></a>
-                        </p>
-                        <p class="price">
-                            {{goods.price}} 
-                            <del v-text="goods.del_price"></del>
-                        </p>
-                        <ul class="thumb-list">
-                            <li v-for="(img,i) in goods.imgs" @mouseover="changeImg(i,index)">
-                                <a><img :src="img" alt=""/></a>
-                            </li>
-                        </ul>
-                        <div class="p-flags">
-                            <div class="flag-saleoff">6折促销</div>
-                            <div class="flag-gift">有赠品</div>
-                        </div>
-                        <div class="actions">
-                            <a href="#" class="like">
-                                <img src="img/product_list/like.png" alt="">
-                                <span class="s-like">喜欢</span>
-                            </a>
-                            <a href="#" class="shopcart">
-                                <span class="s-shopcart">加入购物车</span>
-                                <img src="img/product_list/shopcart.png" alt="">
-                            </a>
+                            <div class="img-bg">
+                                <a href="product_details.html">
+                                    <img :src="goods.current" alt="" />
+                                </a>
+                            </div>
+                            <p class="title">
+                                <a href="javascript:void(0)" v-text="goods.title"></a>
+                            </p>
+                            <p class="price">
+                                {{goods.price}}
+                                <del v-text="goods.del_price"></del>
+                            </p>
+                            <ul class="thumb-list">
+                                <li v-for="(img,i) in goods.imgs" @mouseover="changeImg(i,index)">
+                                    <a>
+                                        <img :src="img" alt="" />
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-flags">
+                                <div class="flag-saleoff">6折促销</div>
+                                <div class="flag-gift">有赠品</div>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="like">
+                                    <img src="img/product_list/like.png" alt="">
+                                    <span class="s-like">喜欢</span>
+                                </a>
+                                <a href="#" class="shopcart">
+                                    <span class="s-shopcart">加入购物车</span>
+                                    <img src="img/product_list/shopcart.png" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="page-list tac">
-                <a href="#" class="numbers"><</a>
-                <a href="#" class="numbers current">1</a>
-                <a href="#" class="numbers">2</a>
-                <a href="#" class="numbers">3</a>
-                <a href="#" class="numbers">4</a>
-                <a href="#" class="numbers">5</a>
-                <a href="#" class="numbers">6</a>
-                <a href="#" class="numbers">></a>
+                <div class="page-list tac">
+                    <a href="#" class="numbers">
+                            <a href="#" class="numbers"><</a>
+                            <a href="#" class="numbers current">1</a>
+                            <a href="#" class="numbers">2</a>
+                            <a href="#" class="numbers">3</a>
+                            <a href="#" class="numbers">4</a>
+                            <a href="#" class="numbers">5</a>
+                            <a href="#" class="numbers">6</a>
+                            <a href="#" class="numbers">></a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- -->
+    </section>
     <footer id="footer"></footer>
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/list.js"></script>
+    <script>
+        new Vue({
+            el: "section",
+            data: {
+                isToggled_1: false,
+                isToggled_2: false,
+                res: []
+            },
+            methods: {
+                //折叠筛选框
+                toggle_1() {
+                    this.isToggled_1 = !this.isToggled_1;
+                },
+                toggle_2() {
+                    this.isToggled_2 = !this.isToggled_2;
+                },
+                //大小图动态切换
+                changeImg(i, index) {
+                    this.res[index].current = this.res[index].imgs[i];
+                }
+            },
+            created() {
+                //获取商品数据
+                axios.get("http://127.0.0.1:90/list").then(res => {
+                    this.res = res.data;
+                })
+            },
+        })
+    </script>
 </body>
+
 </html>

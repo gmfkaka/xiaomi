@@ -1,4 +1,4 @@
-var vm=new Vue({
+new Vue({
     el:".main",
     data:{
         current_color:0,
@@ -154,7 +154,7 @@ var vm=new Vue({
         })
     },
     computed:{
-        //监听总价
+        //监听商品总价
         total_price:function(){
             return this.current_price+this.service_price
         }

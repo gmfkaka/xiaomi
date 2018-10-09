@@ -12,7 +12,7 @@ body{
 }
 .box{
     width: 854px;
-    margin: 0 auto;
+    margin: 80px auto;
     padding-bottom: 10px;
 }
 .main{
@@ -148,4 +148,68 @@ body{
 }
 .footer-bottom{
     padding: 20px;
+}
+/* 输入验证码部分 */
+.step2 .step2_txt{
+    padding-top: 20px;
+}
+.step2_txt>p>span{
+    color:#ff6700;
+}
+.step2 p{
+    padding-bottom: 10px;
+}
+.input-code input{
+    padding: 10px 5px;
+    width: 210px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    outline: 0;
+}
+.remain{
+    margin-left: 8px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #e8e8e8;
+}
+.remain a{
+    color: #000;
+    cursor: pointer;
+    padding: 0 10px;
+    display: block;
+}
+.remain a:hover{
+    background: #ececec;
+    color: #888;
+}
+.remain .disabled{
+    background: none !important;
+    color: #9d9d9d !important;
+    cursor: not-allowed !important;
+}
+.step2_btn{
+    width: 330px;
+    height: 42px;
+    margin: 0 auto;
+    line-height: 42px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+}
+input.next{
+    background-color: #ff6700;
+    margin-top: 15px;
+    border: 1px solid rgba(186,186,186,0.3);
+    color: #fff;
+}
+input.back{
+    background: #fff;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    color: #7c7c7c;
 }

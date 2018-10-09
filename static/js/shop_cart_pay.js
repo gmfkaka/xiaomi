@@ -1,0 +1,27 @@
+new Vue({
+    el:"section",
+    data:{
+        num:1,
+        price:2699,
+        selectAll:false,
+        overmax:false
+    },
+    methods:{
+        //商品数量按钮
+        goSub(){
+            if(this.num>1)
+                this.num--;
+        },
+        goAdd(){
+            if(this.num<10){
+                this.num++
+            }else{
+                this.overmax=true;
+            }     
+        },
+        //勾选商品
+        changeSelect(){
+            this.selectAll=!this.selectAll
+        }
+    }
+})

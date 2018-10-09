@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>填写订单信息</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/shop_cart_confirm.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="header">
+        <div class="container clearfix">
+            <div class="head-logo">
+                <a href="index.html">
+                    <img src="img/icon/logo.png" alt="">
+                </a>
+            </div>
+            <div class="head-title">
+                <h2>确认订单</h2>
+            </div>
+            <div class="head-info">
+                <a href="user_login.html">测试用户</a>
+                <span>|</span>
+                <a href="user_register.html">我的订单</a>
+            </div>
+        </div>
+    </div>
+    <!-- 主体 -->
+    <section>
+        <div class="main-page">
+            <div class="container">
+                <div class="checkout-box">
+                    <div class="section section-address">
+                        <div class="section-header">
+                            <p>收货地址</p>
+                        </div>
+                        <div class="section-body clearfix">
+                            <div class="address-item">
+                                <div class="uname">顾先生</div>
+                                <div class="address-content">
+                                    <p class="utel">138XXXXXXXX</p>
+                                    <p class="uaddress">
+                                        江苏 XX市 XX区 XX街道<br> XX路X号XX小区
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="address-item tac address-new">
+                                添加新地址
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section section-goods">
+                        <div class="section-header clearfix">
+                            <p class="title">商品及优惠券</p>
+                            <div class="more">
+                                <a href="shop_cart_pay.html">返回购物车 ></a> </div>
+                        </div>
+                        <div class="section-body">
+                            <ul class="goods-list clearfix">
+                                <li>
+                                    <div class="col col-img">
+                                        <img src="img/product_details/mi8-1.jpg" alt="">
+                                    </div>
+                                    <div class="col col-name">
+                                        <a href="product_details.html">
+                                            小米8 全网通版 6GB内存 64GB 黑色
+                                        </a>
+                                    </div>
+                                    <div class="col col-price">
+                                        2699元 x 1
+                                    </div>
+                                    <div class="col col-total">
+                                        2699元
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section section-options section-shipment clearfix">
+                        <div class="section-header">
+                            <p>配送方式</p>
+                        </div>
+                        <div class="section-body">
+                            <p class="by">包邮</p>
+                        </div>
+                    </div>
+                    <div class="section section-options section-invoice clearfix">
+                        <div class="section-header">
+                            <p>发票</p>
+                        </div>
+                        <div class="section-body">
+                            <span>电子发票</span>
+                            <span>个人</span>
+                            <span>商品明细</span>
+                            <span>修改 ></span>
+                        </div>
+                    </div>
+                    <div class="section section-count">
+                        <div class="money-box">
+                            <ul>
+                                <li>
+                                    <span class="money-desc">商品件数：</span>
+                                    <span class="val">1件</span>
+                                </li>
+                                <li>
+                                    <span class="money-desc">商品总价：</span>
+                                    <span class="val">2699元</span>
+                                </li>
+                                <li>
+                                    <span class="money-desc">活动优惠：</span>
+                                    <span class="val">-0元</span>
+                                </li>
+                                <li>
+                                    <span class="money-desc">优惠券抵扣：</span>
+                                    <span class="val">-0元</span>
+                                </li>
+                                <li>
+                                    <span class="money-desc">运费：</span>
+                                    <span class="val">-0元</span>
+                                </li>
+                                <li class="total-price">
+                                    <span class="money-desc">应付总额：</span>
+                                    <span class="val">2699元</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-bar clearfix">
+                        <a class="btn">立即下单</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+
+</html>
