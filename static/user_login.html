@@ -17,7 +17,7 @@
             <a href="index.html"><img src="img/login/mistore_logo.png" alt="" /></a>
         </div>
     </div>
-    
+
     <!-- 登录banner -->
     <div class="login-banner">
         <div class="login-form">
@@ -132,7 +132,7 @@
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
-                    }).then((res) => {
+                    }).then(res => {
                         console.log(res.data);
                         if (res.data.code == 1) {
                             alert("登录成功!")

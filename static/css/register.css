@@ -213,3 +213,8 @@ input.back{
     border: 1px solid #ddd;
     color: #7c7c7c;
 }
+.pwd input{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+}

@@ -8,6 +8,8 @@
     <title>小米账号 -注册</title>
     <link rel="stylesheet" href="css/register.css">
     <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/qs.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,7 @@
             </div>
             <div class="account" id="account">
                 <!-- 1.输入手机号 -->
-               <div class="reg-box" v-show="step==1">
+                <div class="reg-box" v-show="step==1">
                     <p class="area">国家/地区</p>
                     <select class="country-list">
                         <option value="1" selected="">中国</option>
@@ -51,12 +53,16 @@
                     <p v-show="phoneNull" class="phonecheck">手机号不能为空</p>
                     <input type="button" value="立即注册" class="submit" @click="reg_phone">
                 </div>
+                <div class="confirm" v-show="step==1">
+                    <input type="checkbox" checked>
+                    <p>注册帐号即表示您同意并愿意遵守小米 <b>用户协议</b> 和 <b>隐私政策</b></p>
+                </div>
                 <!-- 2.输入验证码 -->
                 <div class="reg-box" v-show="step==2">
                     <div class="step2">
                         <div class="step2_txt">
                             <p>
-                                我们已经发送一条验证短信至<span>+86 {{phone}}</span> 
+                                我们已经发送一条验证短信至<span>+86 {{phone}}</span>
                             </p>
                             <p>请输入短信中的验证码</p>
                         </div>
@@ -69,15 +75,25 @@
                             </span>
                         </div>
                         <div class="step2_submit">
-                            <input type="submit" class="next step2_btn" value="下一步">
+                            <input type="button" class="next step2_btn" value="下一步" @click="toPwd()">
                             <input type="button" class="back step2_btn" value="返回">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="confirm" v-show="step==1">
-                <input type="checkbox" checked>
-                <p>注册帐号即表示您同意并愿意遵守小米 <b>用户协议</b> 和 <b>隐私政策</b></p>
+                <!-- 3.输入密码 -->
+                <div class="reg-box" v-show="step==3">
+                    <div class="step3">
+                        <div class="step2_txt">
+                            <p>请输入密码</p>
+                        </div>
+                        <div class="pwd">
+                            <input type="password" v-model="pwd">
+                        </div>
+                        <div class="step2_submit">
+                            <input type="button" class="next step2_btn" value="注册" @click="reg()">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -112,9 +128,10 @@
                 phone: "",
                 phoneChecked: false,
                 phoneNull: false,
-                step:1,
-                resend:false,
-                remain_sec:60
+                step: 1,
+                resend: false,
+                remain_sec: 60,
+                pwd: ""
             },
             methods: {
                 if_show() {
@@ -132,21 +149,41 @@
                         this.phoneNull = false;
                         this.phoneChecked = true;
                     } else {
-                        this.step=2;
+                        this.step = 2;
                         this.reSend();
                     }
                 },
-                reSend(){
-                    this.resend=true;
-                    var t=null;
-                    t=setInterval(()=>{
-                        this.remain_sec-=1;
-                        if(this.remain_sec==0){
-                            this.resend=false;
-                            this.remain_sec=60;
+                reSend() {
+                    this.resend = true;
+                    var t = null;
+                    t = setInterval(() => {
+                        this.remain_sec -= 1;
+                        if (this.remain_sec == 0) {
+                            this.resend = false;
+                            this.remain_sec = 60;
                             clearInterval(t);
                         }
-                    },1000)
+                    }, 1000)
+                },
+                toPwd() {
+                    this.step = 3;
+                },
+                reg() {
+                    var obj = Qs.stringify({
+                        phone: this.phone,
+                        pwd: this.pwd
+                    });
+                    console.log(obj);
+                    axios({
+                        method: "POST",
+                        url: "http://127.0.0.1:90/user/register",
+                        data: obj,
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(res => {
+                        console.log(res.data);
+                    })
                 }
             }
         })
