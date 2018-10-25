@@ -1,10 +1,3 @@
 仿小米官网
 
-<!-- 插入数据库 -->
-将mi.sql文件内容插入数据库
-
-<!-- 启动服务端 -->
-启动项目主入口app.js => 命令行 node app.js
-
-<!-- 运行项目 -->
-浏览器输入localhost:90
+预览地址：http://gmfxiaomi.applinzi.com/
